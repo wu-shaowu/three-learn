@@ -8,6 +8,7 @@ import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import { gsap } from 'gsap';
 import { render } from 'vue';
 import * as dat from 'dat.gui'
+import { gui } from 'dat.gui';
 
 //坐标和移动
 //创建场景
@@ -25,7 +26,8 @@ const material = new THREE.MeshBasicMaterial({ color: 0x00ff00 });
 //根据几何体和材质构建物体
 const cube = new THREE.Mesh(geometry, material);
 
-const gui = new dat.GUI()git branch -M main
+const gui = new dat.GUI()
+gui.add(cube.position,"x").min(0).max(15).step(0.01).name("移动")
 
 cube.position.set(0, 0.0)
 //添加
